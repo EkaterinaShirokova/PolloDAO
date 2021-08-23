@@ -1,0 +1,17 @@
+{
+    "local": {
+        "HOST": "localhost",
+        "PROTOCOL": "http",
+        "LOG_PATH": "logs/",
+        "PORT": 3000,
+        "DB": {
+            "prefix": "mongodb://",
+            "username": "root",
+            "password": "",
+            "host": "localhost:27017",
+            "database": "pollo"
+        },
+        "TOKEN_SECRET": "set-token-here",
+        "UPLOAD_PATH": "/root/uploads"
+    }
+}

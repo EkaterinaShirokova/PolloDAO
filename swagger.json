@@ -1,0 +1,204 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "SMS API",
+    "version": "0.1"
+  },
+  "paths": {
+    "/api/login": {
+      "post": {
+        "summary": "Authenticate user credentials",
+        "description": "API for authenticating user with token response",
+        "parameters": [
+          {
+            "name": "Message/s",
+            "in": "body",
+            "description": "Requires at least a single item containing message content and recipient mobile number in the messages list.",
+            "schema": {
+              "$ref": "#/definitions/login"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Login success",
+            "schema": {
+              "$ref": "#/definitions/loginResponse"
+            }
+          },
+          "400": {
+
+            "schema": {
+              "$ref": "#/responses/Standard400ErrorResponse"
+            }
+          },
+          "500": {
+            "$ref": "#/responses/Standard500ErrorResponse"
+          }
+        }
+      }
+    },
+
+      "/api/new-user": {
+        "post": {
+          "summary": "Add user",
+          "description": "API for adding unregistered user",
+          "parameters": [
+            {
+              "name": "Message/s",
+              "in": "body",
+              "description": "Requires at least a single item containing message content and recipient mobile number in the messages list.",
+              "schema": {
+                "$ref": "#/definitions/userData"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Added user",
+              "schema": {
+                "$ref": "#/definitions/userDataResponse"
+              }
+            },
+            "400": {
+              "schema": {
+                "$ref": "#/responses/Standard400ErrorResponse"
+              }
+            },
+            "500": {
+              "$ref": "#/responses/Standard500ErrorResponse"
+            }
+          }
+        }
+      }
+  },
+  "parameters": {
+    "jwtAuthorization": {
+      "name": "Authorization",
+      "description": "JWT token",
+      "type": "string",
+      "in": "header",
+      "required": true
+    }
+  },
+  "definitions": {
+    "login" : {
+        "type" : "object",
+        "properties":{
+          "username": {
+            "type": "string",
+            "required": true
+          },
+          "password": {
+            "type": "string",
+            "required": true
+          }
+        }
+    },
+    "loginResponse" : {
+      "type" : "object",
+      "properties":{
+          "success": {
+            "type": "boolean"
+          },
+          "result": {
+            "type" : "object",
+            "properties":{
+              "_id": {
+                "type": "string"
+              },
+              "username": {
+                "type": "string"
+              },
+              "type": {
+                "type": "number",
+                "default": 0
+              },
+              "token": {
+                "type": "string"
+              },
+              "created": {
+                "type": "string"
+              },
+              "modified": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      },
+      "userData" : {
+        "type" : "object",
+        "properties":{
+          "username": {
+            "type": "string",
+            "required": true
+          },
+          "password": {
+            "type": "string",
+            "required": true
+          },
+          "type": {
+            "type": "number",
+            "default": 0
+          }
+        }
+      },
+      "userDataResponse" : {
+        "type" : "object",
+        "properties":{
+            "success": {
+              "type": "boolean"
+            },
+            "result": {
+              "type" : "object",
+              "properties":{
+                "_id": {
+                  "type": "string"
+                },
+                "username": {
+                  "type": "string"
+                },
+                "type": {
+                  "type": "number"
+                },
+                "created": {
+                  "type": "string"
+                },
+                "modified": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+    },
+    "responses": {
+      "Standard500ErrorResponse": {
+        "description": "An unexpected error occured."
+      },
+      "Standard400ErrorResponse": {
+            "type" : "object",
+            "properties":{
+                "success": {
+                  "type": "boolean",
+                  "default": false
+                },
+                "result": {
+                  "type" : "object",
+                  "default" : null
+                }
+            }
+
+      },
+      "Standard401ErrorResponse": {
+        "description": "Unauthorized"
+      },
+      "Standard404ErrorResponse": {
+        "description": "Resource does not exists."
+      },
+      "Standard409ErrorResponse": {
+        "description": "Your app is making too many requests and is being rate limited. 429s can trigger on a per-app or per-user basis."
+      }
+    }
+}

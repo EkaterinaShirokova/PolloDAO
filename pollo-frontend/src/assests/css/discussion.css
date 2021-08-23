@@ -1,0 +1,12 @@
+.MuiCheckbox-colorSecondary.Mui-checked{
+
+    color:#F87243!important
+}
+.MuiAvatarGroup-avatar{
+    background-color:#F87243!important;
+    color:white;
+    height:30px!important;
+    width:30px!important;
+    font-size: 12px!important;
+    font-weight: bold;
+}

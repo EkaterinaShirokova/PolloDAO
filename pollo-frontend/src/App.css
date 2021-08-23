@@ -1,0 +1,121 @@
+body{
+    background-color: #FCFCFC!important;
+}
+.MuiAppBar-colorPrimary{
+    background-color: #FCFCFC!important;
+}
+.Mui-selected{
+    background-color: #FCEBE6!important;
+    color:#F87243!important;
+    font-weight: 600;
+}
+.Mui-selected > div > span{
+    font-weight: 600;
+}
+#console {
+    border: 1px solid black;
+    height: 140px;
+    padding: 2px;
+    bottom: 10px;
+    position: absolute;
+    text-align: justify;
+    width: 800px;
+    border-radius: 5px;
+  }
+  #console::before {
+    /* content: 'Console :'; */
+    position: absolute;
+    top: -20px;
+    font-size: 12px;
+    text-align: justify;
+  }
+  #console > p {
+    margin: 0.5em;
+  }
+  .tagbutton{
+    margin: 10px;
+    }
+    .consoletext{
+      padding: 10px;
+      text-align: justify;
+    }
+    .cons{
+      height: 100px;
+      width: 300px;
+      padding: 10px;
+      text-align: justify;
+    }
+    
+    .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline{
+      border-color: #F87243!important;
+
+    }
+    .MuiFormLabel-root.Mui-focused {
+      color:#F87243!important;
+
+    }
+    .MuiOutlinedInput-root{
+      border-radius: 100px;
+      height: 55px;
+    }
+    
+    .css-1rh39ed{
+      border-bottom: none!important;
+    }
+    .MuiBox-root{
+      background: #fafafa80 !important;
+    }
+    .Mui-selected{
+      border-radius: 100px!important;
+    }
+    .MuiTabs-indicator{
+      display: none;
+    }
+
+    .paginationBttns {
+      width: 80%;
+      height: 40px;
+      list-style: none;
+      display: flex;
+      justify-content: center;
+    }
+    
+    .paginationBttns a {
+      padding: 10px;
+      margin: 8px;
+      border-radius: 5px;
+      border: 1px solid #2b2eff;
+      color: #2b2eff;
+      cursor: pointer;
+    }
+    
+    .paginationBttns a:hover {
+      color: white;
+      background-color: #2b2eff;
+    }
+    
+    .paginationActive a {
+      color: white;
+      background-color: #2b2eff;
+    }
+    
+    .paginationDisabled a {
+      color: grey;
+      background-color: grey;
+    }
+    #addressPofi:-internal-autofill-selected {
+      background-color: rgba(255, 255, 255, 0) !important;
+      color: none !important;
+    }
+
+    .MuiTypography-body2{
+      overflow-wrap: break-word !important;
+    }
+    
+    .makeStyles-description-67 .MuiInputBase-formControl textarea{
+      position: absolute;
+      top:20px;
+      width:96% !important;
+    }
+
+    
